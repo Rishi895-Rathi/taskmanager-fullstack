@@ -1,3 +1,5 @@
+<img width="1867" height="1008" alt="Screenshot 2026-06-03 153739" src="https://github.com/user-attachments/assets/50565155-4a07-4ede-ac45-ee5b3f32389a" />
+<img width="1545" height="507" alt="Screenshot 2026-06-03 125407" src="https://github.com/user-attachments/assets/31d4477e-4538-45de-95d9-62fe53e1195f" />
 # TaskManager — Full Stack Application
 
 A full-stack Task Manager application built with **Spring Boot** (backend) and **Vanilla JavaScript** (frontend), featuring JWT authentication, role-based access control, and Docker containerization.
