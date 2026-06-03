@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>TaskManager — Dashboard</title>
+  <link rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar">
+  <div class="navbar-brand">✅ TaskManager</div>
+  <div class="navbar-user">
+    <span id="userName"></span>
+    <span class="badge badge-user" id="userRole"></span>
+    <button class="btn-logout" id="logoutBtn">Logout</button>
+  </div>
+</nav>
+
+<div class="main-container">
+
+  <!-- Stats -->
+  <div class="stats-grid">
+    <div class="stat-card">
+      <div class="stat-number" id="totalTasks">0</div>
+      <div class="stat-label">Total Tasks</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-number" id="pendingTasks">0</div>
+      <div class="stat-label">Pending</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-number" id="doneTasks">0</div>
+      <div class="stat-label">Completed</div>
+    </div>
+  </div>
+
+  <!-- Create Task -->
+  <div class="card">
+    <h3>➕ Create New Task</h3>
+    <form id="createTaskForm">
+      <div class="form-group">
+        <label>Title</label>
+        <input type="text" id="taskTitle" placeholder="Task title" required/>
+      </div>
+      <div class="form-group">
+        <label>Description</label>
+        <textarea id="taskDesc" rows="2" placeholder="Optional description"></textarea>
+      </div>
+      <button type="submit" class="btn btn-primary"
+        style="width:auto; padding:10px 28px">
+        Create Task
+      </button>
+    </form>
+  </div>
+
+  <!-- Task List -->
+  <div class="card">
+    <h3>📋 My Tasks</h3>
+
+    <!-- Filter bar -->
+    <div class="filter-bar">
+      <select id="filterCompleted">
+        <option value="">All Tasks</option>
+        <option value="false">⏳ Pending</option>
+        <option value="true">✅ Completed</option>
+      </select>
+    </div>
+
+    <div id="taskList"></div>
+  </div>
+
+</div>
+
+<!-- Edit Modal -->
+<div class="modal-overlay" id="editModal">
+  <div class="modal">
+    <h3>✏️ Edit Task</h3>
+    <form id="editTaskForm">
+      <div class="form-group">
+        <label>Title</label>
+        <input type="text" id="editTitle" required/>
+      </div>
+      <div class="form-group">
+        <label>Description</label>
+        <textarea id="editDesc" rows="2"></textarea>
+      </div>
+      <div class="form-group"
+        style="display:flex; align-items:center; gap:10px; margin-top:8px">
+        <input type="checkbox" id="editCompleted" style="width:18px; height:18px"/>
+        <label for="editCompleted" style="margin:0; font-size:14px">
+          Mark as Completed
+        </label>
+      </div>
+      <div class="modal-actions">
+        <button type="button" class="btn btn-sm"
+          onclick="closeEditModal()"
+          style="background:#eee; color:#333">
+          Cancel
+        </button>
+        <button type="submit" class="btn btn-primary btn-sm">
+          Save Changes
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<script src="js/api.js"></script>
+<script src="js/dashboard.js"></script>
+</body>
+</html>
